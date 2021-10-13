@@ -1,7 +1,7 @@
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, ReactNode, useState } from "react";
 interface iProps {
   hook: any;
-  children: JSX.Element[] | JSX.Element;
+  children: ReactNode;
 }
 export default function InputAdd({ children, hook }: iProps) {
   const [listState, setListState] = hook;

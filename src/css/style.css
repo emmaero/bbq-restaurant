@@ -4,6 +4,7 @@
 
 /* components */
 @import url("./components/navigation.css");
+@import url("./components/hero.css");
 @import url("./components/category-section.css");
 @import url("./components/category.css");
 @import url("./components/nutrition-fact.css");

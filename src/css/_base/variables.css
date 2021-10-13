@@ -1,11 +1,10 @@
 :root {
   /* Colors */
-  --color-main: #896F5F;
-  --color-light-green: #cdd6d6;
+  --color-main: #896f5f;
+  --color-light-main: #f1d8c9;
   --color-white: #f5f5f5;
 
-  --color-transparent: rgba(98, 165, 161, 0.4);
-
+  --color-transparent: #896f5f2d;
   /* Spacing */
   --space-extra-big: 44px;
   --space-big: 32px;
@@ -33,6 +32,4 @@
   --font-button-desktop: 19px;
 
   --font-nav-bar: 17px;
-
-
 }

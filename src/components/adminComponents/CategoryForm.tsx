@@ -28,7 +28,7 @@ export default function CategoryForm({onAdd}:iProps) {
   }
   return (
     <form>
-      <InputText hook={[name, setName]}>
+      <InputText hook={[name, setName]} inputType="text">
         <>Category name:</>
       </InputText>
       <ImageUploader

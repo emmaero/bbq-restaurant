@@ -36,7 +36,7 @@ export default function AddProductForm({ onAddProduct, item }: iProps) {
   }
   return (
     <form>
-      <InputText hook={[productName, setProductName]}>
+      <InputText hook={[productName, setProductName]} inputType="text">
         <>Product name</>
       </InputText>
       <ImageUploader
@@ -53,13 +53,6 @@ export default function AddProductForm({ onAddProduct, item }: iProps) {
       <InputAdd hook={[ingredients, setIngredients]}>
         <>Ingredients</>
       </InputAdd>
-      {/* <div className="ingredients">
-        <InputText hook={[ingredient, setIngredient]}></InputText>
-        <button className="button-link" onClick={onAddIngredient}>
-          Add
-        </button>
-        <ol>{productIngredients}</ol>
-      </div> */}
       <button className="button-main" onClick={addProduct}>
         Add product
       </button>

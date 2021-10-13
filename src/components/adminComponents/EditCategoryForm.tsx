@@ -34,7 +34,7 @@ export default function EditCategoryForm({ item, onUpdate }: iProps) {
 
   return (
     <form>
-      <InputText hook={[heading, setHeading]}>
+      <InputText hook={[heading, setHeading]} inputType="text">
         <>Category name:</>
       </InputText>
       <ImageUploader

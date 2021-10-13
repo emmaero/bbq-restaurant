@@ -1,6 +1,6 @@
 footer {
   background-color: var(--color-main);
-  color: var(--color-light-green);
+  color: var(--color-light-main);
   min-height: 44px;
   width: 100%;
   margin-top: var(--space-medium);

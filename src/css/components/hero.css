@@ -9,7 +9,7 @@
   padding: var(--space-big);
   line-height: 44px;
   text-align: center;
-  background-image: url("../../assets/images/dishes/lentil-stew.jpeg");
+  background-image: url("../../assets/images/steak-plate.jpg");
   background-color: var(--color-secondary);
   background-repeat: no-repeat;
   background-size: cover;
@@ -27,7 +27,7 @@
   padding: 24px 0;
 }
 .hero h2 {
- font-weight: normal;
+  font-weight: normal;
 }
 .hero-container {
   z-index: 1;
@@ -36,7 +36,7 @@
   .hero-container {
     max-width: 500px;
   }
-  .hero{
+  .hero {
     height: calc(100vh - 90px);
   }
 }
