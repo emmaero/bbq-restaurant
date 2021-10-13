@@ -1,44 +1,34 @@
-import React, { useCallback, useEffect, useState } from "react";
-import { arrayUnion, getFirestore } from "@firebase/firestore/lite";
-import { useHistory } from "react-router-dom";
+import React from "react";
+import { useHistory, useParams } from "react-router-dom";
 import AddProductForm from "../../components/adminComponents/AddProductForm";
-import { iCategory, iProduct } from "../../interfaces/interfaces";
-import firebaseInstance from "../../scripts/firebase";
-import { getDocument, updateDocument } from "../../scripts/firestore";
-
-export default function AddProduct({ match }: any) {
-  const id = match.params.id;
-  const [category, setCategory] = useState<iCategory>({
-    id: "",
-    name: "",
-    imageURL: "",
-    description: "",
-    products: Array<iProduct>(),
-  });
-  const [status, setStatus] = useState(0); // 0: loading, 1: loaded, 2: error
-  // Properties
-  const database = getFirestore(firebaseInstance);
-
-  const categoryCallback = useCallback(async () => {
-    const document = await getDocument(database, "category", id);
-    setCategory(document as iCategory);
-    setStatus(1);
-  }, [database, id]);
-
-  useEffect(() => {
-    categoryCallback();
-  }, [categoryCallback]);
+import { iCategory} from "../../interfaces/interfaces";
+import { createDocument } from "../../scripts/firestore";
+import { useCategory } from "../../states/CategoryProvider";
+type PropParams = {
+  categoryId: string;
+};
+export default function AddProduct() {
   let history = useHistory();
+  const { categoryId } = useParams<PropParams>();
+  const { categories } = useCategory();
+  const category = categories.find((item: iCategory) => item.id === categoryId);
+
+
   function onAddProduct(product: object, categoryItem: iCategory) {
-    updateDocument(database, "category", id, {
-      products: arrayUnion(product),
-    });
+    createDocument(`category/${categoryId}/products`, product);
+    var choice = window.confirm("Product added go back to previous page");
+    if (choice === true) {
+      history.goBack();
+    }
   }
 
   return (
-    <div>
-      <h1>Add product here</h1>
+    <div className="admin-container">
+      <h2>{`Add product to ${category.name}`}</h2>
       <AddProductForm item={category} onAddProduct={onAddProduct} />
+      <button className="button-secondary" onClick={() => history.goBack()}>
+        Previous page
+      </button>
     </div>
   );
 }

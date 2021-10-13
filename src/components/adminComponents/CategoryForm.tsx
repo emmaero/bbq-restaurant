@@ -1,16 +1,14 @@
 import React, { useState } from "react";
 import InputText from "../sharedComponents/inputComponents/InputText";
 import InputTextArea from "../sharedComponents/inputComponents/InputTextArea";
-import { createDoc } from "../../scripts/firestore";
-import { getFirestore } from "firebase/firestore/lite";
-import firebaseInstance from "../../scripts/firebase";
-
-export default function CategoryForm() {
+import ImageUploader from "../userComponents/ImageUploader";
+interface iProps{
+  onAdd: Function
+}
+export default function CategoryForm({onAdd}:iProps) {
   const [name, setName] = useState("");
   const [imageURL, setImageURL] = useState("");
   const [description, setDescription] = useState("");
-
-  const database = getFirestore(firebaseInstance);
 
   function onSubmit(event: any) {
     event.preventDefault();
@@ -18,8 +16,9 @@ export default function CategoryForm() {
       name: name,
       imageURL: imageURL,
       description: description,
+      products:[]
     };
-    createDoc(database, "category", categoryInfo);
+    onAdd(categoryInfo);
     resetInputs();
   }
   function resetInputs() {
@@ -32,13 +31,17 @@ export default function CategoryForm() {
       <InputText hook={[name, setName]}>
         <>Category name:</>
       </InputText>
-      <InputText hook={[imageURL, setImageURL]}>
-        <>Category Image URL:</>
-      </InputText>
+      <ImageUploader
+        folder="category"
+        name={name}
+        hook={[imageURL, setImageURL]}
+      />
       <InputTextArea hook={[description, setDescription]}>
         <>Category description:</>
       </InputTextArea>
-      <button onClick={onSubmit}>Add category</button>
+      <button className="button-main" onClick={onSubmit}>
+        Add category
+      </button>
     </form>
   );
 }

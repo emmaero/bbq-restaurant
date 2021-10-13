@@ -1,0 +1,42 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 48px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-big);
+  line-height: 44px;
+  text-align: center;
+  background-image: url("../../assets/images/dishes/lentil-stew.jpeg");
+  background-color: var(--color-secondary);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--color-white);
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  background-color: var(--color-transparent);
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+}
+.hero h1 {
+  padding: 24px 0;
+}
+.hero h2 {
+ font-weight: normal;
+}
+.hero-container {
+  z-index: 1;
+}
+@media only screen and (min-width: 920px) {
+  .hero-container {
+    max-width: 500px;
+  }
+  .hero{
+    height: calc(100vh - 90px);
+  }
+}

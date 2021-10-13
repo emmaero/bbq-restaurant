@@ -1,0 +1,38 @@
+:root {
+  /* Colors */
+  --color-main: #896F5F;
+  --color-light-green: #cdd6d6;
+  --color-white: #f5f5f5;
+
+  --color-transparent: rgba(98, 165, 161, 0.4);
+
+  /* Spacing */
+  --space-extra-big: 44px;
+  --space-big: 32px;
+  --space-medium: 16px;
+  --space-small: 8px;
+
+  /*Screen*/
+  --screen-big: 768px;
+
+  /* Fonts */
+  --font-family: "Source_Sans_Pro", sans-serif;
+  --font-heading-1-mobile: 34px;
+  --font-heading-1-desktop: 64px;
+
+  --font-heading-2-mobile: 22px;
+  --font-heading-2-desktop: 42px;
+
+  --font-heading-3-mobile: 17px;
+  --font-heading-3-desktop: 24px;
+
+  --font-text-mobile: 17px;
+  --font-text-desktop: 18px;
+
+  --font-button-mobile: 15px;
+  --font-button-desktop: 19px;
+
+  --font-nav-bar: 17px;
+
+
+}

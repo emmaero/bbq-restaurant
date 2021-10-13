@@ -1,0 +1,12 @@
+.admin-container {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  padding: 8px;
+}
+.admin-container img {
+  width: 100%;
+}
+.ingredients input {
+  width: 70%;
+}

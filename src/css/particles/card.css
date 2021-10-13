@@ -1,0 +1,51 @@
+.card {
+  display: flex;
+  list-style: none;
+  flex-direction: row;
+  max-height: 88px;
+  overflow: hidden;
+  width: 100%;
+  cursor: pointer;
+  box-shadow: 1px 2px var(--color-main);
+}
+.list img {
+
+  max-width: 88px;
+}
+.card-info {
+  display: block;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+  max-height: 67px;
+}
+.list li {
+  padding: var(--space-small) 0;
+  list-style: none;
+}
+.list p {
+  text-overflow: ellipsis;
+}
+.card > div {
+  padding-left: var(--space-medium);
+}
+
+
+@media only screen and (min-width: 920px) {
+
+  .list img,
+  .card {
+    max-height: 160px;
+  }
+  .card-info {
+  max-height: 100px;
+}
+
+  .category-header {
+    min-height: 500px;
+    max-height: 80%;
+  }
+  .card-info {
+    max-height: 80%;
+  }
+}

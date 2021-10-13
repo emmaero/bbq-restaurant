@@ -1,0 +1,16 @@
+.map-section {
+  display: flex;
+  height: 273px;
+  width: 100%;
+  justify-content: center;
+}
+.map-section img {
+  height: 100%;
+  object-fit: cover;
+  margin: auto;
+}
+@media (min-width: 920px) {
+  .map-section {
+    height: 560px;
+  }
+}

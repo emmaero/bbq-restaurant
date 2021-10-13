@@ -1,0 +1,123 @@
+.logo {
+  height: 90px;
+}
+.logo img {
+  height: 100%;
+  margin-left: var(--space-small);
+}
+
+.nav-bar {
+  font-size: var(--font-nav-bar);
+  background-color: var(--color-main);
+  height: 48px;
+  display: flex;
+  color: var(--color-white);
+  align-items: center;
+  z-index: 10;
+  position: relative;
+}
+.nav-links li {
+  list-style: none;
+  text-align: center;
+  margin: auto;
+  opacity: 0;
+}
+.nav-bar li a {
+  list-style: none;
+  text-decoration: none;
+  font-weight: bold;
+}
+.nav-links {
+  height: 92vh;
+  right: 0;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  transform: translateX(100%);
+  transition: transform 0.5s ease-in;
+  background-color: var(--color-main);
+  z-index: 10;
+}
+.nav-active {
+  transform: translateX(0%);
+  top: 48px;
+}
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+.burger {
+  margin-left: auto;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+.burger div {
+  width: 30px;
+  margin: 5px;
+  background-color: var(--color-white);
+  height: 3px;
+  transition: all 0.5s ease;
+}
+.cross .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.cross .line2 {
+  opacity: 0;
+}
+.cross .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+@media screen and (min-width: 920px) {
+  .burger {
+    display: none;
+  }
+
+  .nav-bar {
+    height: 90px;
+  }
+  .nav-links {
+    height: inherit;
+    max-width: 611px;
+    transform: translatex(0%);
+    flex-direction: row;
+    top: 0;
+  }
+  .nav-bar li {
+    list-style: none;
+    min-width: 144px;
+    border-bottom: none;
+    text-align: center;
+    height: 100%;
+    padding: 0px;
+    margin: auto;
+    opacity: 1;
+  }
+  .nav-bar li {
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  nav ul {
+    position: relative;
+    top: initial;
+    display: flex;
+    align-items: center;
+  }
+  .nav-links li:hover {
+    background-color: var(--color-white);
+    color: var(--color-main) !important;
+  }
+}

@@ -1,0 +1,46 @@
+.button-main {
+  border: solid 2px var(--color-main);
+  background-color: var(--color-white);
+  padding: var(--space-small) 0;
+  min-width: 200px;
+  height: 44px;
+  text-align: center;
+  cursor: pointer;
+  font-size: var(--font-button-mobile);
+  color: var(--color-main);
+  margin: 8px 0;
+}
+.button-secondary {
+  background-color: var(--color-main);
+  padding: var(--space-small) 0;
+  min-width: 200px;
+  height: 44px;
+  text-align: center;
+  cursor: pointer;
+  font-size: var(--font-button-mobile);
+  color: var(--color-white);
+  margin: 8px 0;
+}
+.button-link {
+  background: none;
+  border: none;
+  font-weight: bold;
+  text-decoration: underline;
+  padding: 4px 8px;
+  cursor: pointer;
+  color: var(--color-main);
+}
+.button-main:hover {
+  background-color: var(--color-main);
+  color: var(--color-white);
+}
+.button-secondary:hover {
+   border: solid 2px var(--color-main);
+  background-color: var(--color-white);
+  color: var(--color-main);
+}
+@media (min-width: 920px) {
+  .button-main {
+    font-size: var(--font-button-desktop);
+  }
+}

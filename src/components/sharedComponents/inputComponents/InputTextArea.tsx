@@ -10,13 +10,12 @@ export default function InputTextArea({ children, hook }: iProps) {
       <br />
       <span>{children}</span> <br />
       <textarea
-        rows={3}
-        cols={60}
         name="text"
         placeholder="Enter text"
         value={state}
         onChange={(event) => setState(event.target.value)}
       />
+      <br />
     </label>
   );
 }

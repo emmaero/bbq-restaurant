@@ -9,8 +9,8 @@ export default function ReactRouter() {
         <BrowserRouter>
           <Switch>
             <Route path="/" exact component={AddCategory} />
-            <Route path="/edit-category/:id" component={EditCategory} />
-            <Route path="/add-product/:id" component={AddProduct} />
+            <Route path="/edit-category/:categoryId" component={EditCategory} />
+            <Route path="/add-product/:categoryId" component={AddProduct} />
           </Switch>
         </BrowserRouter>
       </div>
