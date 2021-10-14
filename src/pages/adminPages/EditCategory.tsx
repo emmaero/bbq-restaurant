@@ -14,7 +14,7 @@ export default function EditCategory() {
   const [products, setProducts] = useState<iProduct[]>([]);
   const [status, setStatus] = useState(0); // 0: loading, 1: loaded, 2: error
   const { categoryId } = useParams<PropParams>();
-  const { categories } = useCategory();
+  const { categories, dispatch } = useCategory();
   const category = categories.find((item: iCategory) => item.id === categoryId);
   const path = `category/${categoryId}/products`;
   let history = useHistory();
@@ -32,11 +32,11 @@ export default function EditCategory() {
     fetchData(path);
   }, [fetchData]);
   const productItems = products.map((item: iProduct) => (
-    <ProductCard key={item.id} item={item}/>
-    
+    <ProductCard key={item.id} item={item} categoryId={categoryId} />
   ));
-  function onUpdate(categoryUpdate: iCategory) {
-    updateDocument("category", categoryUpdate.id, categoryUpdate);
+  async function onUpdate(categoryUpdate: iCategory) {
+    await updateDocument("category", categoryUpdate.id, categoryUpdate);
+    dispatch({ type: "EDIT_CATEGORIES", payload: categoryUpdate });
   }
 
   return (
@@ -47,8 +47,8 @@ export default function EditCategory() {
         Previous page
       </button>
       {status === 0 && <p>Loading ⏱</p>}
-      {status === 1 && productItems}
-      {status === 2 && <p>Error 🚨</p>}
+      {status === 1 && <ul className="list row">{productItems}</ul>}
+      {status === 2 && <p>Error</p>}
     </div>
   );
 }

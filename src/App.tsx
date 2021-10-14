@@ -30,7 +30,7 @@ export default function App() {
     <div className="App">
       {status === 0 && <p>Loading ⏱</p>}
       {status === 1 && <ReactRouter />}
-      {status === 2 && <p>Error 🚨</p>}
+      {status === 2 && <p>Error</p>}
     </div>
   );
 }

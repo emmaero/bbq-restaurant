@@ -5,7 +5,7 @@ interface iProps {
   item: iCategory;
 }
 export default function CategorySection({ item }: iProps) {
-  const { id, name, imageURL, description } = item;
+  const {name, imageURL, description } = item;
   return (
     <div className="category-section">
       <img src={imageURL} alt="bbq halmstad" />

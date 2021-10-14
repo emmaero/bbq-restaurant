@@ -5,7 +5,6 @@ import {
   doc,
   deleteDoc,
   updateDoc,
-  DocumentData,
   getDoc,
   setDoc,
 } from "firebase/firestore/lite";
@@ -32,7 +31,8 @@ export async function getDocument(path: string, id: string) {
   const docSnap = await getDoc(docRef);
 
   if (docSnap.exists()) {
-    return docSnap.data();
+    const document = docSnap.data();
+    return {id:id, ...document};
   } else {
     // doc.data() will be undefined in this case
     console.log("No such document!");
@@ -51,7 +51,7 @@ export async function overWriteDocument(
 // Update file
 export async function updateDocument(path: string, id: string, data: object) {
   const documentReference = doc(fireStoreDatabase, path, id);
-  await updateDoc(documentReference, data as DocumentData);
+  await updateDoc(documentReference, data);
 }
 
 // Delete file

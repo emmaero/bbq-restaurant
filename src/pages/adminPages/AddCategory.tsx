@@ -7,13 +7,14 @@ import { createDocument } from "../../scripts/firestore";
 
 export default function AddCategory() {
   // Global state
-  const { categories } = useCategory();
+  const { categories, dispatch } = useCategory();
 
   const categoryList = categories.map((item:iCategory) => (
     <CategoryCard key={item.id} item={item} />
   ));
-function onAdd(categoryInfo:iCategory) {
-   createDocument("category", categoryInfo);
+async function onAdd(categoryInfo:iCategory) {
+  categoryInfo.id = await createDocument("category", categoryInfo);
+  dispatch({ type: "ADD_CATEGORIES" , payload: categoryInfo});
 }
 
   return (
