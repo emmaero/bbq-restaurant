@@ -1,4 +1,5 @@
 import React, { FormEvent, ReactNode, useState } from "react";
+import Ingredient from "../../adminComponents/Ingredient";
 interface iProps {
   hook: any;
   children: ReactNode;
@@ -7,7 +8,7 @@ export default function InputAdd({ children, hook }: iProps) {
   const [listState, setListState] = hook;
   const [state, setState] = useState("");
   const productIngredients = listState.map((item: string, index: number) => (
-    <li key={index}>{item}</li>
+    <Ingredient key={index} item={item} />
   ));
   function onAddState(event: FormEvent) {
     event.preventDefault();
@@ -15,10 +16,15 @@ export default function InputAdd({ children, hook }: iProps) {
     setListState(newList);
     setState("");
   }
+  function onClearState(event: FormEvent) {
+    event.preventDefault();
+    // @ts-ignore
+    setListState((prev) => []);
+  }
+
   return (
     <div className="ingredients">
-          <label>
-              
+      <label>
         <br />
         <span>{children}</span> <br />
         <input
@@ -29,6 +35,9 @@ export default function InputAdd({ children, hook }: iProps) {
       </label>
       <button className="button-link" onClick={onAddState}>
         Add
+      </button>
+      <button className="button-link" onClick={onClearState}>
+        Clear
       </button>
       <ol>{productIngredients}</ol>
     </div>

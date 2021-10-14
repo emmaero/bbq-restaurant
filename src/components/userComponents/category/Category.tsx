@@ -1,5 +1,5 @@
 import React from 'react'
-import ProductCard from './ProductCard';
+import ProductCard from './UserProductCard';
 import { useCategory } from '../../../states/CategoryProvider';
 import { iCategory } from '../../../interfaces/interfaces';
 

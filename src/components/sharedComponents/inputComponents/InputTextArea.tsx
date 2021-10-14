@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 interface iProps {
   hook: any;
-  children: JSX.Element[] | JSX.Element;
+  children: ReactNode;
 }
 export default function InputTextArea({ children, hook }: iProps) {
   const [state, setState] = hook;

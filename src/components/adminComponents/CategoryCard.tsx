@@ -2,17 +2,20 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { iCategory } from "../../interfaces/interfaces";
 import { deleteDocument } from "../../scripts/firestore";
+import { useCategory } from "../../states/CategoryProvider";
 interface iProp {
   item: iCategory;
 }
 export default function CategoryCard({ item }: iProp) {
-  const { id, name, imageURL, description } = item;
-  function onDelete(id: string) {
+  const { id, name, imageURL } = item;
+  const { dispatch } = useCategory();
+  async function onDelete(id: string) {
 
     var choice = window.confirm(`Delete ${name}!`);
     if (choice === true) {
-      deleteDocument("category", id);
+      await deleteDocument("category", id);
       alert(`${name} has been deleted`);
+      dispatch({ type: "DELETE_CATEGORIES", id: id });
     } 
   }
   return (
@@ -22,7 +25,6 @@ export default function CategoryCard({ item }: iProp) {
         <div>
           <div className="card-info">
             <h3>{name}</h3>
-            <p>{description}</p>
           </div>
           <div className="card-buttons">
               <button onClick={()=>onDelete(id)} className="button-link">Delete</button>

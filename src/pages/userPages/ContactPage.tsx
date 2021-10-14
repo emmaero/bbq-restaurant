@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Booking from '../../components/userComponents/contact/Booking';
 import ContactAddress from '../../components/userComponents/contact/ContactAddress';
 import OpeningTime from '../../components/userComponents/contact/OpeningTime';

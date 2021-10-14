@@ -1,8 +1,8 @@
 import React, { FormEvent } from 'react';
-import { uploadFile } from '../../scripts/cloudStorage';
-import dataURLToFile from '../../scripts/upload-image/dataURLToFile';
-import resizeImage from '../../scripts/upload-image/resizeImage';
-import readImage from '../../scripts/upload-image/readImage';
+import { uploadFile } from '../../../scripts/cloudStorage';
+import dataURLToFile from '../../../scripts/upload-image/dataURLToFile';
+import resizeImage from '../../../scripts/upload-image/resizeImage';
+import readImage from '../../../scripts/upload-image/readImage';
 // Interface
 interface iProps {
     name: string,

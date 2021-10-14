@@ -5,10 +5,10 @@ export default function PageFooter() {
     return (
       <footer>
         <div className="icons-footer">
-          <a href="">
+          <a href="https://github.com/emmaero/bbq-restaurant.git">
             <FaFacebookSquare />
           </a>
-          <a href="">
+          <a href="https://github.com/emmaero/bbq-restaurant.git">
             <FaInstagram />
           </a>
         </div>

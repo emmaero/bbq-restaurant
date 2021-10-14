@@ -4,7 +4,7 @@ import { iCategory } from '../../../interfaces/interfaces';
 interface iProps {
   item: iCategory;
 }
-export default function CategoryCard({ item }: iProps) {
+export default function UserCategoryCard({ item }: iProps) {
       const { id, name, imageURL, description } = item;
     return (
       <li>

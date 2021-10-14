@@ -7,7 +7,7 @@ type PropParams = {
 interface iProps{
     product: iProduct;
 }
-export default function ProductCard({ product }:iProps) {
+export default function UserProductCard({ product }:iProps) {
     const { name, productImageUrl, longDescription, description, ingredients } = product;
   return (
     <li>
