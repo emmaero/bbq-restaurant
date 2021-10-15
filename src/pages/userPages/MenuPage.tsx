@@ -1,14 +1,14 @@
 import React from "react";
 import { useCategory } from "../../states/CategoryProvider";
 import ListComponent from "../../components/sharedComponents/ListComponent";
-import UserCategoryCard from "../../components/userComponents/category/UserCategoryCard";
-export default function Menu() {
+import CategoryItem  from "../../components/userComponents/category/CategoryItem";
+export default function MenuPage() {
   const { categories } = useCategory();
   return (
-    <div className="category-page-detail row">
-      <p>Our menu</p>
+    <div className="category-page-detail row user-page">
+      <h1>Our menu</h1>
       <ul className="product-list row">
-        <ListComponent list={categories} ComponentList={UserCategoryCard} />
+        <ListComponent list={categories} ComponentList={CategoryItem } />
       </ul>
     </div>
   );

@@ -1,3 +1,4 @@
+@import url("./font-family.css");
 /* base */
 @import url("./_base/layout.css");
 @import url("./_base/variables.css");

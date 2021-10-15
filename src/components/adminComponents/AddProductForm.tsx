@@ -15,6 +15,7 @@ export default function AddProductForm({ onAddProduct, item }: iProps) {
   const [description, setDescription] = useState("");
   const [longDescription, setLongDescription] = useState("");
   const [ingredients, setIngredients] = useState(Array<string>());
+    const [validInput, setValidInput] = useState(false);
 
   function addProduct(event: FormEvent) {
     event.preventDefault();

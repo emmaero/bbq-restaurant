@@ -1,7 +1,7 @@
 import React from "react";
 import { iCategory } from "../../interfaces/interfaces";
 import CategoryForm from "../../components/adminComponents/CategoryForm";
-import CategoryCard from "../../components/adminComponents/CategoryCard";
+import CategoryAdminCard from "../../components/adminComponents/CategoryAdminCard";
 import { useCategory } from "../../states/CategoryProvider";
 import { createDocument } from "../../scripts/firestore";
 
@@ -10,7 +10,7 @@ export default function AddCategory() {
   const { categories, dispatch } = useCategory();
 
   const categoryList = categories.map((item:iCategory) => (
-    <CategoryCard key={item.id} item={item} />
+    <CategoryAdminCard key={item.id} item={item} />
   ));
 async function onAdd(categoryInfo:iCategory) {
   categoryInfo.id = await createDocument("category", categoryInfo);

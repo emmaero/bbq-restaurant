@@ -4,8 +4,9 @@ import { iProduct } from "../../interfaces/interfaces";
 interface iProps {
   item: iProduct;
   categoryId: string;
+  onDelete: Function;
 }
-export default function ProductCard({ item, categoryId }: iProps) {
+export default function ProductAdminCard({ item, categoryId, onDelete}: iProps) {
   const { id, name, productImageUrl, description } = item;
   return (
     <li>
@@ -17,6 +18,9 @@ export default function ProductCard({ item, categoryId }: iProps) {
             <p>{description}</p>
           </div>
           <div className="view-page">
+            <button onClick={() => onDelete(id)} className="button-link">
+              delete
+            </button>
             <Link to={`/edit-product/${categoryId}/${id}`}>
               <button className="button-link">Edit</button>
             </Link>
@@ -26,3 +30,5 @@ export default function ProductCard({ item, categoryId }: iProps) {
     </li>
   );
 }
+
+

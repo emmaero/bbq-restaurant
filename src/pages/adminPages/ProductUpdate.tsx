@@ -34,7 +34,6 @@ export default function ProductUpdate() {
     alert("Product has been updated");
     history.goBack();
   }
-
   return (
     <div className="admin-container">
       <h1>Update Product</h1>

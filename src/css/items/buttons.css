@@ -1,4 +1,4 @@
-.button-main {
+.button-secondary {
   border: solid 2px var(--color-main);
   background-color: var(--color-white);
   padding: var(--space-small) 0;
@@ -10,7 +10,7 @@
   color: var(--color-main);
   margin: 8px 0;
 }
-.button-secondary {
+.button-main {
   background-color: var(--color-main);
   padding: var(--space-small) 0;
   min-width: 200px;
@@ -30,17 +30,17 @@
   cursor: pointer;
   color: var(--color-main);
 }
-.button-main:hover {
+.button-secondary:hover {
   background-color: var(--color-main);
   color: var(--color-white);
 }
-.button-secondary:hover {
-   border: solid 2px var(--color-main);
+.button-main:hover {
+  border: solid 2px var(--color-main);
   background-color: var(--color-white);
   color: var(--color-main);
 }
 @media (min-width: 920px) {
-  .button-main {
+  .button-secondary {
     font-size: var(--font-button-desktop);
   }
 }

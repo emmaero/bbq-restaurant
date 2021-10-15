@@ -4,6 +4,11 @@
   margin: auto;
   padding: var(--space-medium);
 }
+.user-page{
+    margin: auto;
+  padding: 8px;
+  min-height: 85vh;
+}
 .page-image img {
   width: 100%;
   object-fit: cover;
