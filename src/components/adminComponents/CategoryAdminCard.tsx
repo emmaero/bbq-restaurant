@@ -6,7 +6,7 @@ import { useCategory } from "../../states/CategoryProvider";
 interface iProp {
   item: iCategory;
 }
-export default function CategoryCard({ item }: iProp) {
+export default function CategoryAdminCard({ item }: iProp) {
   const { id, name, imageURL } = item;
   const { dispatch } = useCategory();
   async function onDelete(id: string) {

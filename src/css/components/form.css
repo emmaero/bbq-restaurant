@@ -4,6 +4,7 @@ form input{
     width: 95%;
     height: 44px;
     border: none;
+    padding: 8px;
 }
 form textarea{
     display: block;
@@ -11,4 +12,5 @@ form textarea{
     width: 95%;
     height: 88px;
     border: none;
+    padding: 8px;
 }

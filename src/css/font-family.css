@@ -1,10 +1,1 @@
-@font-face {
-  font-family: "Source_Sans_Pro";
-  src: url("../assets/fonts/SourceSansPro-Bold.ttf");
-  font-weight: bold;
-}
-@font-face {
-  font-family: "Source_Sans_Pro";
-  src: url("../assets/fonts/SourceSansPro-Regular.ttf");
-  font-weight: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Saira:wght@400;700&display=swap');

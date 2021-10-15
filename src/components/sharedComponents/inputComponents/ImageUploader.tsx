@@ -20,7 +20,7 @@ export default function ImageUploader({name,folder,hook}:iProps) {
     const filename = `images/${folder}-image-${name}.png`;
 
     const originalImage = await readImage(file);
-    const resizedImage = await resizeImage(originalImage, 200, 200);
+    const resizedImage = await resizeImage(originalImage, 300, 300);
     const finalImage = await dataURLToFile(resizedImage, `${filename}.png`);
 
     const fileUpload = await uploadFile(filename, finalImage);
