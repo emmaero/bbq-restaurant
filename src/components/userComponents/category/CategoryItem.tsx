@@ -9,7 +9,11 @@ export default function CategoryItem({ item }: iProps) {
   return (
     <li>
       <div className="card">
-        <img src={imageURL} alt="" />
+        {imageURL === "" ? (
+          <img src={require("../../../assets/images/placeholder.png")} alt="" />
+        ) : (
+          <img src={imageURL} alt="" />
+        )}
         <div>
           <div className="card-info">
             <h3>{name}</h3>

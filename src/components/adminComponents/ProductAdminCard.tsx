@@ -15,7 +15,11 @@ export default function ProductAdminCard({
   return (
     <li>
       <div className="card">
-        <img src={productImageUrl} alt="" />
+        {productImageUrl === "" ? (
+          <img src={require("../../assets/images/placeholder.png")} alt="" />
+        ) : (
+          <img src={productImageUrl} alt="" />
+        )}
         <div>
           <div className="card-info">
             <h3>{name}</h3>
@@ -23,7 +27,7 @@ export default function ProductAdminCard({
           </div>
           <div className="card-buttons">
             <button onClick={() => onDelete(id)} className="button-link">
-              delete
+              Delete
             </button>
             <Link to={`/edit-product/${categoryId}/${id}`}>
               <button className="button-link">Edit</button>
