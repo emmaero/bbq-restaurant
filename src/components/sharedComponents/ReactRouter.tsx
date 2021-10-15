@@ -11,6 +11,7 @@ import MenuPage from "../../pages/userPages/MenuPage";
 import ProductUpdate from "../../pages/adminPages/ProductUpdate";
 import CategoryPage from "../../pages/userPages/CategoryPage";
 import ProductPage from "../../pages/userPages/ProductPage";
+import ErrorPage from "../../pages/userPages/ErrorPage";
 export default function ReactRouter() {
   return (
     <div>
@@ -29,6 +30,7 @@ export default function ReactRouter() {
           />
           <Route path="/contact" component={ContactPage} />
           <Route path="/menu-category" component={MenuPage} />
+          <Route path="/" component={ErrorPage} />
         </Switch>
         <PageFooter />
       </BrowserRouter>

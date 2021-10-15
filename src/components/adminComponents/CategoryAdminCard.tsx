@@ -10,13 +10,12 @@ export default function CategoryAdminCard({ item }: iProp) {
   const { id, name, imageURL } = item;
   const { dispatch } = useCategory();
   async function onDelete(id: string) {
-
     var choice = window.confirm(`Delete ${name}!`);
     if (choice === true) {
       await deleteDocument("category", id);
       alert(`${name} has been deleted`);
       dispatch({ type: "DELETE_CATEGORIES", id: id });
-    } 
+    }
   }
   return (
     <li>
@@ -27,7 +26,9 @@ export default function CategoryAdminCard({ item }: iProp) {
             <h3>{name}</h3>
           </div>
           <div className="card-buttons">
-              <button onClick={()=>onDelete(id)} className="button-link">Delete</button>
+            <button onClick={() => onDelete(id)} className="button-link">
+              Delete
+            </button>
             <Link to={`/edit-category/${id}`}>
               <button className="button-link">Edit</button>
             </Link>
