@@ -6,7 +6,7 @@ export default function ErrorPage() {
     <main className="user-page row">
       <div className="background">
         <img
-          src="https://cdn.dribbble.com/users/3167939/screenshots/10422336/media/b618a0e73996c3b24b58b2db1c881ee3.png"
+          src="https://miro.medium.com/max/2000/1*cLQUX8jM2bMdwMcV2yXWYA.jpeg"
           alt="404"
         />
       </div>
