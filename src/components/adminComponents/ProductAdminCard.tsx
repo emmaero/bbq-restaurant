@@ -6,7 +6,11 @@ interface iProps {
   categoryId: string;
   onDelete: Function;
 }
-export default function ProductAdminCard({ item, categoryId, onDelete}: iProps) {
+export default function ProductAdminCard({
+  item,
+  categoryId,
+  onDelete,
+}: iProps) {
   const { id, name, productImageUrl, description } = item;
   return (
     <li>
@@ -17,7 +21,7 @@ export default function ProductAdminCard({ item, categoryId, onDelete}: iProps) 
             <h3>{name}</h3>
             <p>{description}</p>
           </div>
-          <div className="view-page">
+          <div className="card-buttons">
             <button onClick={() => onDelete(id)} className="button-link">
               delete
             </button>
@@ -30,5 +34,3 @@ export default function ProductAdminCard({ item, categoryId, onDelete}: iProps) 
     </li>
   );
 }
-
-

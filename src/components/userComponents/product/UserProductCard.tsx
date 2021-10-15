@@ -9,10 +9,10 @@ export default function UserProductCard({ product, categoryId }: iProps) {
   const { id, name, productImageUrl, description } = product;
   return (
     <li>
-      <div className="product-card">
+      <div className="card">
         <img src={productImageUrl} alt="" />
         <div>
-          <div className="product-card-info">
+          <div className="card-info">
             <h3>{name}</h3>
             <p>{description}</p>
           </div>

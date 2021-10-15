@@ -1,16 +1,15 @@
-import React, { FormEvent } from 'react';
-import { uploadFile } from '../../../scripts/cloudStorage';
-import dataURLToFile from '../../../scripts/upload-image/dataURLToFile';
-import resizeImage from '../../../scripts/upload-image/resizeImage';
-import readImage from '../../../scripts/upload-image/readImage';
+import React, { FormEvent } from "react";
+import { uploadFile } from "../../../scripts/cloudStorage";
+import dataURLToFile from "../../../scripts/upload-image/dataURLToFile";
+import resizeImage from "../../../scripts/upload-image/resizeImage";
+import readImage from "../../../scripts/upload-image/readImage";
 // Interface
 interface iProps {
-    name: string,
-    folder: string,
-    hook:any
-
+  name: string;
+  folder: string;
+  hook: any;
 }
-export default function ImageUploader({name,folder,hook}:iProps) {
+export default function ImageUploader({ name, folder, hook }: iProps) {
   // Local
   const [myImageURL, setMyImageURL] = hook;
   // Methods
@@ -37,7 +36,11 @@ export default function ImageUploader({name,folder,hook}:iProps) {
           onChange={(event) => onImageChange(event)}
           type="file"
         />
-       {myImageURL!==""? <img src={myImageURL} alt="User generated content" />:""}
+        {myImageURL !== "" ? (
+          <img src={myImageURL} alt="User generated content" />
+        ) : (
+          ""
+        )}
       </label>
     </>
   );

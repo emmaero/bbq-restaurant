@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import InputText from "../sharedComponents/inputComponents/InputText";
 import InputTextArea from "../sharedComponents/inputComponents/InputTextArea";
 import ImageUploader from "../sharedComponents/inputComponents/ImageUploader";
-interface iProps{
-  onAdd: Function
+interface iProps {
+  onAdd: Function;
 }
-export default function CategoryForm({onAdd}:iProps) {
+export default function CategoryForm({ onAdd }: iProps) {
   const [name, setName] = useState("");
   const [imageURL, setImageURL] = useState("");
   const [description, setDescription] = useState("");
@@ -16,7 +16,7 @@ export default function CategoryForm({onAdd}:iProps) {
       name: name,
       imageURL: imageURL,
       description: description,
-      products:[]
+      products: [],
     };
     onAdd(categoryInfo);
     resetInputs();

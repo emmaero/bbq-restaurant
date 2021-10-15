@@ -16,7 +16,7 @@ export default function EditCategoryForm({ item, onUpdate }: iProps) {
   function onSubmit(event: any) {
     event.preventDefault();
     const categoryUpdate = {
-      id:item.id,
+      id: item.id,
       name: heading,
       imageURL: imageUrl,
       description: content,
