@@ -20,14 +20,28 @@ export default function CategoryPage() {
     const productItems = data.map((item: iProduct) => (
       <UserProductCard key={item.id} product={item} categoryId={categoryId} />
     ));
-    return (
-      <div className="user-page">
+  return (
+          <div className="user-page row">
+      <div className="category-header">
+        <h1>{category.name}</h1>
+        <div className="overlay"></div>
+        <img
+          src={category.imageURL}
+          alt="vegan"
+        />
+      </div>
+      <div className="category-page-detail row">
+        <p>{category.description}</p>
+        
+
         <button className="button-secondary" onClick={() => history.goBack()}>
           Previous page
         </button>
         {loading && <p>Loading ⏱</p>}
         {data && <ul className="list row">{productItems}</ul>}
         {error === 2 && <p>Error</p>}
+      </div>
+
       </div>
     );
 }
