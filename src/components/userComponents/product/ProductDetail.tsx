@@ -5,16 +5,20 @@ interface iProps {
   item: object;
 }
 export default function ProductDetail({ item }: iProps) {
-   const history = useHistory();
-  const { id, name, productImageUrl, longDescription, ingredients } =
+  const history = useHistory();
+  const {name, productImageUrl, longDescription, ingredients } =
     item as iProduct;
-    function goToPreviousPath() {
-      history.goBack();
-    }
+  function goToPreviousPath() {
+    history.goBack();
+  }
   return (
     <div className="container user-page">
       <div className="page-image">
-        <img src={productImageUrl} alt="bbq" />
+        {productImageUrl === "" ? (
+          <img src={require("../../../assets/images/placeholder.png")} alt="" />
+        ) : (
+          <img src={productImageUrl} alt="bbq" />
+        )}
       </div>
       <div className="page-details">
         <h2>{name}</h2>

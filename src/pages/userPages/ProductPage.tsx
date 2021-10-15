@@ -1,7 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import ProductDetail from "../../components/userComponents/product/ProductDetail";
-import { iProduct } from "../../interfaces/interfaces";
 import { getDocument } from "../../scripts/firestore";
 type PropParams = {
   categoryId: string;
