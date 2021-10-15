@@ -22,12 +22,7 @@ export default function EditCategoryForm({ item, onUpdate }: iProps) {
       description: content,
     };
     onUpdate(categoryUpdate);
-    resetInputs();
-  }
-  function resetInputs() {
-    setHeading("");
-    setContent("");
-    setImageURL("");
+
   }
 
   return (
