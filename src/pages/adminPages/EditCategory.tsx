@@ -18,16 +18,23 @@ export default function EditCategory() {
   const { data, loading, error } = useFetch(path);
 
   let history = useHistory();
-async function onDelete(id:string) {
-      var choice = window.confirm("Do you want to delet this product");
-      if (choice === true) {
-        await deleteDocument(path, id);
-        alert("Product has been deleted");
-      }
-}
+  
+  async function onDelete(id: string) {
+    var choice = window.confirm("Do you want to delet this product");
+    if (choice === true) {
+      await deleteDocument(path, id);
+      alert("Product has been deleted");
+    }
+  }
   const productItems = data.map((item: iProduct) => (
-    <ProductAdminCard key={item.id} item={item} categoryId={categoryId} onDelete={onDelete} />
+    <ProductAdminCard
+      key={item.id}
+      item={item}
+      categoryId={categoryId}
+      onDelete={onDelete}
+    />
   ));
+
   async function onUpdate(categoryUpdate: iCategory) {
     await updateDocument("category", categoryUpdate.id, categoryUpdate);
     dispatch({ type: "EDIT_CATEGORIES", payload: categoryUpdate });

@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory, useParams } from "react-router-dom";
 import AddProductForm from "../../components/adminComponents/AddProductForm";
-import { iCategory} from "../../interfaces/interfaces";
+import { iCategory } from "../../interfaces/interfaces";
 import { createDocument } from "../../scripts/firestore";
 import { useCategory } from "../../states/CategoryProvider";
 type PropParams = {
@@ -13,9 +13,11 @@ export default function AddProduct() {
   const { categories } = useCategory();
   const category = categories.find((item: iCategory) => item.id === categoryId);
 
-
+  // unused argment - 1
   function onAddProduct(product: object, categoryItem: iCategory) {
     createDocument(`category/${categoryId}/products`, product);
+
+    // add a question mark to this confirm window. It shoudl be go back to previous page?
     var choice = window.confirm("Product added go back to previous page");
     if (choice === true) {
       history.goBack();

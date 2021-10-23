@@ -9,17 +9,18 @@ export default function AddCategory() {
   // Global state
   const { categories, dispatch } = useCategory();
 
-  const categoryList = categories.map((item:iCategory) => (
+  const categoryList = categories.map((item: iCategory) => (
     <CategoryAdminCard key={item.id} item={item} />
   ));
-async function onAdd(categoryInfo:iCategory) {
-  categoryInfo.id = await createDocument("category", categoryInfo);
-  dispatch({ type: "ADD_CATEGORIES" , payload: categoryInfo});
-}
+
+  async function onAdd(categoryInfo: iCategory) {
+    categoryInfo.id = await createDocument("category", categoryInfo);
+    dispatch({ type: "ADD_CATEGORIES", payload: categoryInfo });
+  }
 
   return (
     <div className="admin-container">
-      <CategoryForm onAdd={onAdd}/>
+      <CategoryForm onAdd={onAdd} />
 
       <ul className="list">{categoryList}</ul>
     </div>
