@@ -19,6 +19,7 @@ export default function AddProductForm({ onAddProduct, item }: iProps) {
 
   function addProduct(event: FormEvent) {
     event.preventDefault();
+
     const product = {
       name: productName,
       productImageUrl: productURL,
@@ -26,6 +27,7 @@ export default function AddProductForm({ onAddProduct, item }: iProps) {
       description: description,
       ingredients: ingredients,
     };
+
     onAddProduct(product, item);
   }
   return (
