@@ -1,5 +1,6 @@
 import React from "react";
 import { useCallback, useEffect, useState } from "react";
+
 //project files
 import ReactRouter from "./components/sharedComponents/ReactRouter";
 import { getCollection } from "./scripts/firestore";
@@ -10,9 +11,12 @@ import "./css/style.css";
 export default function App() {
   //Global state
   const {dispatch } = useCategory();
+
   //local state
   const [status, setStatus] = useState(0); // 0: loading, 1: loaded, 2: error
   const path = "category";
+
+  // methods
   const categoryCallback = useCallback(async (path) => {
     try {
       const categories = await getCollection(path);
@@ -26,6 +30,7 @@ export default function App() {
   useEffect(() => {
     categoryCallback(path);
   }, [categoryCallback]);
+  
   return (
     <div className="App">
       {status === 0 && <p>Loading ⏱</p>}

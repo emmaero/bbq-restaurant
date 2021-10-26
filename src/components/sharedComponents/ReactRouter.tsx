@@ -1,4 +1,3 @@
-import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import AddCategory from "../../pages/adminPages/AddCategory";
 import EditCategory from "../../pages/adminPages/EditCategory";
@@ -12,6 +11,7 @@ import ProductUpdate from "../../pages/adminPages/ProductUpdate";
 import CategoryPage from "../../pages/userPages/CategoryPage";
 import ProductPage from "../../pages/userPages/ProductPage";
 import ErrorPage from "../../pages/userPages/ErrorPage";
+
 export default function ReactRouter() {
   return (
     <div>

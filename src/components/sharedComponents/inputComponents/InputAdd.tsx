@@ -4,12 +4,13 @@ interface iProps {
   hook: any;
   children: ReactNode;
 }
+
 export default function InputAdd({ children, hook }: iProps) {
   const [listState, setListState] = hook;
   const [state, setState] = useState("");
-  const productIngredients = listState.map((item: string, index: number) => (
-    <Ingredient key={index} item={item} />
-  ));
+  const productIngredients = listState.map(
+    (ingredient: string, index: number) => <li key={index}>{ingredient}</li>
+  );
   function onAddState(event: FormEvent) {
     event.preventDefault();
     const newList = [...listState, state];

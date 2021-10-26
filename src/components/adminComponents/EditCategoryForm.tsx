@@ -8,27 +8,30 @@ interface iProps {
   item: iCategory;
   onUpdate: Function;
 }
+
 export default function EditCategoryForm({ item, onUpdate }: iProps) {
   const { name, imageURL, description } = item;
   const [heading, setHeading] = useState(name);
   const [imageUrl, setImageURL] = useState(imageURL);
   const [content, setContent] = useState(description);
+
   function onSubmit(event: any) {
     event.preventDefault();
+
     const categoryUpdate = {
       id: item.id,
       name: heading,
       imageURL: imageUrl,
       description: content,
     };
-    onUpdate(categoryUpdate);
 
+    onUpdate(categoryUpdate);
   }
 
   return (
     <form>
       <InputText hook={[heading, setHeading]} inputType="text">
-        <>Category name:</>
+        Category name:
       </InputText>
       <ImageUploader
         folder="category"
@@ -36,7 +39,7 @@ export default function EditCategoryForm({ item, onUpdate }: iProps) {
         hook={[imageURL, setImageURL]}
       />
       <InputTextArea hook={[content, setContent]}>
-        <>Category description</>
+        Category description
       </InputTextArea>
       <button className="button-main" onClick={onSubmit}>
         Update

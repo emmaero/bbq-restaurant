@@ -12,6 +12,7 @@ export default function CategoryForm({ onAdd }: iProps) {
 
   function onSubmit(event: any) {
     event.preventDefault();
+    
     const categoryInfo = {
       name: name,
       imageURL: imageURL,
@@ -21,11 +22,13 @@ export default function CategoryForm({ onAdd }: iProps) {
     onAdd(categoryInfo);
     resetInputs();
   }
+
   function resetInputs() {
     setName("");
     setDescription("");
     setImageURL("");
   }
+
   return (
     <form>
       <InputText hook={[name, setName]} inputType="text">

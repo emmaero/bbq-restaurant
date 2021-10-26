@@ -17,6 +17,7 @@ export default function CategoryAdminCard({ item }: iProp) {
       dispatch({ type: "DELETE_CATEGORIES", id: id });
     }
   }
+
   return (
     <li>
       <div className="card">
